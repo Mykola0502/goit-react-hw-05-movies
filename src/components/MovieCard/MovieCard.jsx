@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import NoImage from 'images/noImage.png';
 // import { useLocation } from 'react-router-dom';
 
@@ -13,9 +15,9 @@ export const MovieCard = ({ film }) => {
     genres,
   } = film;
 
-  //   console.log(genres);
+  // console.log(typeof vote_average);
 
-  const MovieGenres = genres => genres.map(genre => genre.name).join(', ');
+  const getMovieGenres = genres => genres.map(genre => genre.name).join(', ');
 
   //   console.log(film);
   //   const location = useLocation();
@@ -40,10 +42,19 @@ export const MovieCard = ({ film }) => {
         <h3>Overview</h3>
         <p>{overview}</p>
         <h3>Genres</h3>
-        <p>{genres && MovieGenres(genres)}</p>
+        <p>{genres && getMovieGenres(genres)}</p>
       </CardInfo>
     </CardWrapper>
   );
+};
+
+MovieCard.propTypes = {
+  poster_path: PropTypes.string,
+  original_title: PropTypes.string,
+  release_date: PropTypes.string,
+  overview: PropTypes.string,
+  vote_average: PropTypes.number,
+  genres: PropTypes.array,
 };
 
 // import NoImage from 'images/noImage.png';
@@ -62,7 +73,7 @@ export const MovieCard = ({ film }) => {
 
 //   //   console.log(genres);
 
-//   const MovieGenres = genres => genres.map(genre => genre.name).join(', ');
+//   const getMovieGenres = genres => genres.map(genre => genre.name).join(', ');
 
 //   //   console.log(film);
 
@@ -84,7 +95,7 @@ export const MovieCard = ({ film }) => {
 //         <h3>Overview</h3>
 //         <p>{overview}</p>
 //         <h3>Genres</h3>
-//         <p>{genres && MovieGenres(genres)}</p>
+//         <p>{genres && getMovieGenres(genres)}</p>
 //       </CardInfo>
 //     </CardWrapper>
 //   );

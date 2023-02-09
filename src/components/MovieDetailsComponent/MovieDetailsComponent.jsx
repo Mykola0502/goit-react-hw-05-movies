@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import { Suspense } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 import { MovieCard } from 'components/MovieCard';
 import { Loader } from 'components/Loader';
@@ -8,10 +9,10 @@ const MovieDetailsComponent = ({ movie, backLink }) => {
   //   const location = useLocation();
 
   // const { backLinkHref } = backLinkHref;
-  const location = useLocation();
+  // const location = useLocation();
   // const backLinkHref = location.state?.from ?? '/';
 
-  console.log(location.state);
+  // console.log(movie);
 
   return (
     <>
@@ -39,6 +40,11 @@ const MovieDetailsComponent = ({ movie, backLink }) => {
 };
 
 export default MovieDetailsComponent;
+
+MovieDetailsComponent.propTypes = {
+  movie: PropTypes.any.isRequired,
+  backLink: PropTypes.object.isRequired,
+};
 
 // // <Link to="cast" state={{from: backLinkHref}}>Cast</Link>
 // // <Link to="reviews" state={{from: backLinkHref}}>Reviews</Link>
