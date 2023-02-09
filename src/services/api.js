@@ -37,6 +37,24 @@ export const fetchMovie = async id => {
   }
 };
 
+export const fetchSearchMovie = async query => {
+  try {
+    const response = await axios.get(`search/movie`, {
+      params: {
+        api_key: '9e9058c72b8ee0828aa8b191435a8696',
+        language: 'en-US',
+        query: `${query}`,
+        // page: 1,
+        // include_adult: false,
+      },
+    });
+    return response.data.results;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error);
+  }
+};
+
 export const fetchMovieCast = async id => {
   try {
     const response = await axios.get(`movie/${id}/credits`, {
@@ -67,5 +85,3 @@ export const fetchMovieReviews = async id => {
     throw new Error(error);
   }
 };
-
-// https://api.themoviedb.org/3/trending/movie/day?api_key=9e9058c72b8ee0828aa8b191435a8696
