@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const Header = styled.header`
   position: sticky;
   top: 0;
-  /* z-index: 1100; */
+  z-index: 100;
   /* display: flex;
   align-items: center;
   justify-content: space-between; */
