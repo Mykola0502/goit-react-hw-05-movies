@@ -22,7 +22,6 @@ export const SearchBox = ({ onSubmit }) => {
 
     if (searchInput.trim()) {
       onSubmit(searchInput);
-      // setSearchInput('');
       return;
     }
     toast.error('Please enter the text in the search field! 🔍', {});

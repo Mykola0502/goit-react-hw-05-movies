@@ -30,8 +30,6 @@ const Reviews = () => {
     getReviewsById();
   }, [movieId]);
 
-  // console.log(reviews);
-
   return (
     <>
       {loading && <Loader />}

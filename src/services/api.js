@@ -2,24 +2,18 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
-// const controller = new AbortController();
-
 export const fetchTrending = async () => {
   try {
     const response = await axios.get('trending/movie/day', {
       params: {
         api_key: '9e9058c72b8ee0828aa8b191435a8696',
-        // signal: controller.signal,
       },
     });
     return response.data;
   } catch (error) {
-    // throw new Error(error.message);
     console.log(error);
   }
 };
-
-// controller.abort();
 
 export const fetchMovie = async id => {
   try {
@@ -32,8 +26,6 @@ export const fetchMovie = async id => {
     return response.data;
   } catch (error) {
     throw new Error(error);
-    // console.log(error);
-    // return error;
   }
 };
 
@@ -44,8 +36,6 @@ export const fetchSearchMovie = async query => {
         api_key: '9e9058c72b8ee0828aa8b191435a8696',
         language: 'en-US',
         query: `${query}`,
-        // page: 1,
-        // include_adult: false,
       },
     });
     return response.data.results;

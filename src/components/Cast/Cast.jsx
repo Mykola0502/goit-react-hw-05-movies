@@ -13,9 +13,6 @@ const Cast = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // const location = useLocation();
-  // console.log(location.state);
-
   useEffect(() => {
     const getCastById = async () => {
       try {
@@ -32,8 +29,6 @@ const Cast = () => {
 
     getCastById();
   }, [movieId]);
-
-  //   console.log(cast);
 
   return (
     <>

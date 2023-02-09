@@ -15,75 +15,36 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get('query') ?? '';
 
-  console.log(movies);
-  // console.log(movieName);
-
-  //   const visibleMovies = movies.filter(movie =>
-  //     movie.name.toLowerCase().includes(movieName.toLowerCase().trim())
-  //   );
-
-  // useEffect(() => {
-  //   setSearchParams({ query: '' });
-  // }, [setSearchParams]);
-
   const handleFormSubmit = search => {
     setSearchParams({ query: search });
   };
 
-  // const updateQueryString = query => {
-  //   const nextParams = query !== '' ? { query } : {};
-  //   setSearchParams(nextParams);
-  // };
-
   useEffect(() => {
-    // if (movieName === '') {
-    //   return;
-    // }
     setNotFound(null);
     const searchMovies = async query => {
       if (!query) {
-        // setNotFound(null);
         return;
-        // setMovies([]);
       }
-
-      // if (!searchParams) {
-      //   setNotFound(null);
-      //   return;
-      // }
 
       try {
         setLoading(true);
         const movies = await fetchSearchMovie(query);
         if (movies.length === 0) {
           setNotFound('Nothing was found for your request');
-          // setMovies([]);
           return;
         }
         setMovies(movies);
-        // setSearchParams('');
-        // console.log(movies);
-
-        // console.log(movie);
       } catch (error) {
-        // console.log(error.message);
         console.log(error);
 
         setError(error.message);
-        // setError('No films found, try again😢');
       } finally {
         setLoading(false);
       }
     };
 
     searchMovies(movieName);
-
-    // return () => {
-    //   setSearchParams('');
-    // };
   }, [movieName]);
-
-  console.log(notFound);
 
   return (
     <main>

@@ -6,14 +6,6 @@ import { MovieCard } from 'components/MovieCard';
 import { Loader } from 'components/Loader';
 
 const MovieDetailsComponent = ({ movie, backLink }) => {
-  //   const location = useLocation();
-
-  // const { backLinkHref } = backLinkHref;
-  // const location = useLocation();
-  // const backLinkHref = location.state?.from ?? '/';
-
-  // console.log(movie);
-
   return (
     <>
       <MovieCard film={movie} />
@@ -45,6 +37,3 @@ MovieDetailsComponent.propTypes = {
   movie: PropTypes.any.isRequired,
   backLink: PropTypes.object.isRequired,
 };
-
-// // <Link to="cast" state={{from: backLinkHref}}>Cast</Link>
-// // <Link to="reviews" state={{from: backLinkHref}}>Reviews</Link>

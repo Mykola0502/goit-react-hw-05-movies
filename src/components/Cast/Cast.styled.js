@@ -4,17 +4,11 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  /* padding: 8px 0; */
-
   list-style: none;
 `;
 
 export const Item = styled.li`
   max-width: 100px;
-  /* height: auto; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* padding: 5px 0; */
 `;
 
 export const Name = styled.p`

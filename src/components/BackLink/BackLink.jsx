@@ -5,7 +5,6 @@ import { HiArrowLeft } from 'react-icons/hi';
 import { BackWrapper, StyledLink } from './BackLink.styled';
 
 export const BackLink = ({ to, children }) => {
-  // console.log(typeof to);
   return (
     <BackWrapper>
       <StyledLink to={to}>

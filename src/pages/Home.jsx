@@ -10,30 +10,22 @@ const Home = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // const controller = new AbortController();
-
     const getMoviesTrending = async () => {
       try {
         setLoading(true);
         const movies = await fetchTrending();
-        //   {signal: controller.signal;}
         setMovies(movies.results);
       } catch (error) {
         console.log(error.message);
         console.log(error);
 
         setError(error.message);
-        // setError('No films found, try again😢');
       } finally {
         setLoading(false);
       }
     };
 
     getMoviesTrending();
-
-    // return () => {
-    //   controller.abort();
-    // };
   }, []);
 
   return (

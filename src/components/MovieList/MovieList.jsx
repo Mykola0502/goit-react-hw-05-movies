@@ -5,7 +5,6 @@ import { Item, StyledLink } from './MovieList.styled';
 
 export const MovieList = ({ movies }) => {
   const location = useLocation();
-  console.log(typeof movies);
   return (
     <ul>
       {movies.map(movie => (

@@ -7,7 +7,6 @@ export const BackWrapper = styled.div`
   margin-bottom: 10px;
   padding: 5px 0;
   background-color: #d8d4fae0;
-  /* z-index: 1100; */
 `;
 
 export const StyledLink = styled(Link)`

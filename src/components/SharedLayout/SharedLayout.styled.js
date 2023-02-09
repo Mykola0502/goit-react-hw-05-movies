@@ -12,10 +12,6 @@ export const Header = styled.header`
   position: sticky;
   top: 0;
   z-index: 100;
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
-  /* gap: 12px; */
   padding: 8px 0;
   margin-bottom: 16px;
   background-color: #e69494eb;
@@ -43,7 +39,6 @@ export const Link = styled(NavLink)`
 
   &.active {
     color: #d55561;
-    /* background-color: orangered; */
   }
 
   :hover,
