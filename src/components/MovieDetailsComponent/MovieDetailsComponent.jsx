@@ -1,6 +1,8 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 import { MovieCard } from 'components/MovieCard';
+import { Loader } from 'components/Loader';
 
 const MovieDetailsComponent = ({ movie, backLink }) => {
   //   const location = useLocation();
@@ -28,6 +30,9 @@ const MovieDetailsComponent = ({ movie, backLink }) => {
             </Link>
           </li>
         </ul>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </div>
     </>
   );
