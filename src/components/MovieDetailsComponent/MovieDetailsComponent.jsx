@@ -1,12 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { MovieCard } from 'components/MovieCard';
 
 const MovieDetailsComponent = ({ movie, backLink }) => {
   //   const location = useLocation();
-  //   console.log(location.state);
 
-  const { backLinkHref } = backLink;
+  // const { backLinkHref } = backLinkHref;
+  const location = useLocation();
+  // const backLinkHref = location.state?.from ?? '/';
+
+  console.log(location.state);
 
   return (
     <>
@@ -15,12 +18,12 @@ const MovieDetailsComponent = ({ movie, backLink }) => {
         <h3>Additional information</h3>
         <ul>
           <li>
-            <Link to="cast" state={{ from: backLinkHref }}>
+            <Link to="cast" state={{ from: backLink }}>
               Cast
             </Link>
           </li>
           <li>
-            <Link to="reviews" state={{ from: backLinkHref }}>
+            <Link to="reviews" state={{ from: backLink }}>
               Reviews
             </Link>
           </li>

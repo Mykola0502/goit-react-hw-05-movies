@@ -41,6 +41,8 @@ const MovieDetails = () => {
     //   }
   }, [movieId]);
 
+  console.log(location.state);
+
   return (
     <main>
       <BackLink to={backLinkHref}>Go back</BackLink>
