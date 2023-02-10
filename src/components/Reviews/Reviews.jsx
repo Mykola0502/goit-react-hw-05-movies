@@ -40,26 +40,38 @@ const Reviews = () => {
         </h2>
       )}
       <List>
-        {reviews.map(({ id, author_details, author, content }) => (
-          <li key={id}>
-            <AuthorWrapper>
-              <AuthorImg
-                src={
-                  author_details.avatar_path
-                    ? `https://image.tmdb.org/t/p/w500${author_details.avatar_path}`
-                    : NoImage
-                }
-                alt={author}
-              />
-              <div>
-                <h4>Author: </h4>
-                <h5>{author}</h5>
-              </div>
-            </AuthorWrapper>
+        {reviews.map(({ id, author_details, author, content }) => {
+          let path = '';
+          if (author_details.avatar_path.includes('/http')) {
+            if (author_details.avatar_path.indexOf('/') === 0) {
+              path = author_details.avatar_path.slice(
+                1,
+                author_details.avatar_path.length
+              );
+            } else {
+              path = `${author_details.avatar_path}`;
+            }
+          } else {
+            path = `https://image.tmdb.org/t/p/w500${author_details.avatar_path}`;
+          }
 
-            <p>{content}</p>
-          </li>
-        ))}
+          return (
+            <li key={id}>
+              <AuthorWrapper>
+                <AuthorImg
+                  src={author_details.avatar_path ? `${path}` : NoImage}
+                  alt={author}
+                />
+                <div>
+                  <h4>Author: </h4>
+                  <h5>{author}</h5>
+                </div>
+              </AuthorWrapper>
+
+              <p>{content}</p>
+            </li>
+          );
+        })}
       </List>
     </>
   );
