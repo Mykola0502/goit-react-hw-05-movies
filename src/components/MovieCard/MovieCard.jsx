@@ -41,10 +41,12 @@ export const MovieCard = ({ film }) => {
 };
 
 MovieCard.propTypes = {
-  poster_path: PropTypes.string,
-  original_title: PropTypes.string,
-  release_date: PropTypes.string,
-  overview: PropTypes.string,
-  vote_average: PropTypes.number,
-  genres: PropTypes.array,
+  film: PropTypes.shape({
+    poster_path: PropTypes.string,
+    original_title: PropTypes.string,
+    release_date: PropTypes.string,
+    overview: PropTypes.string,
+    vote_average: PropTypes.number,
+    genres: PropTypes.array,
+  }),
 };

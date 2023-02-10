@@ -21,6 +21,7 @@ const Movies = () => {
 
   useEffect(() => {
     setNotFound(null);
+    setMovies([]);
     const searchMovies = async query => {
       if (!query) {
         return;

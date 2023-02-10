@@ -10,7 +10,7 @@ export const MovieList = ({ movies }) => {
       {movies.map(movie => (
         <Item key={movie.id}>
           <StyledLink to={`/movie/${movie.id}`} state={{ from: location }}>
-            {movie.title}
+            {movie.title || movie.original_title}
           </StyledLink>
         </Item>
       ))}
@@ -23,7 +23,7 @@ MovieList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string,
-      name: PropTypes.string,
+      original_title: PropTypes.string,
     })
   ).isRequired,
 };

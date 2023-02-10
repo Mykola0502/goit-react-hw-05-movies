@@ -34,6 +34,6 @@ const MovieDetailsComponent = ({ movie, backLink }) => {
 export default MovieDetailsComponent;
 
 MovieDetailsComponent.propTypes = {
-  movie: PropTypes.any.isRequired,
+  movie: PropTypes.object.isRequired,
   backLink: PropTypes.object.isRequired,
 };

@@ -7,7 +7,7 @@ import { Loader } from 'components/Loader';
 import MovieDetailsComponent from 'components/MovieDetailsComponent';
 
 const MovieDetails = () => {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const { movieId } = useParams();
